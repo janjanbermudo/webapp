@@ -29,4 +29,14 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>view</servlet-name>
+        <servlet-class>com.webapp.servlets.view</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>view</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
 </web-app>
