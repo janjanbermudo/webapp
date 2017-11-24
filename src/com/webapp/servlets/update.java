@@ -16,11 +16,34 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-@WebServlet(
-        name = "view"
-)
-public class view extends HttpServlet {
+@WebServlet(name = "update")
+public class update extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        String student_no = request.getParameter("id");
+        String first_name = request.getParameter("id");
+        String last_name = request.getParameter("id");
+        String middle_name = request.getParameter("id");
+        String birthdate = request.getParameter("id");
+        String email = request.getParameter("id");
+        String contact_no = request.getParameter("id");
+        String address = request.getParameter("id");
+        String gender = request.getParameter("id");
+        String course = request.getParameter("id");
+
+        Students students = new Students();
+        Boolean bln = students.updateStudent(
+                id,
+                student_no,
+                first_name,
+                last_name,
+                middle_name,
+                birthdate,
+                email,
+                contact_no,
+                address,
+                gender,
+                course);
 
     }
 
@@ -41,7 +64,7 @@ public class view extends HttpServlet {
         request.setAttribute("course", StudentArr[10]);
         request.setAttribute("images", StudentArr[11]);
 
-        request.getRequestDispatcher("/views.jsp").forward(request,response);
+        request.getRequestDispatcher("/update.jsp").forward(request,response);
 
     }
 }

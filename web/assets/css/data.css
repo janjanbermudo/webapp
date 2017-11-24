@@ -1,0 +1,8 @@
+.data{
+    width:300px;
+    border: 1px solid #000000;
+    vertical-align: middle;
+    padding: 10px;
+    display: block;
+    margin: auto auto;
+}

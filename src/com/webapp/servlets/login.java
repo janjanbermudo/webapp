@@ -39,11 +39,13 @@ public class login extends HttpServlet {
                                     "<td>" +rs.getString("last_name")+ "</td>" +
                                     "<td><img class=\"profile-img\"src=\"assets/images/" + rs.getString( "image")+ "\"</td>" +
                                     "<td>" +
-                                        "<a href=\"view?id="+rs.getString("id") + "\">" +
-                                        "<i class=\"fa fa-eye\" aria-hidden=\"true\"></i>" + "&nbsp;" +
-                                        "</a>" +
-                                        "<i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>" + "&nbsp;" +
-                                        "<i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i>" + "&nbsp;" +
+                                    "<a href=\"view?id="+rs.getString("id") + "\">" +
+                                    "<i class=\"fa fa-eye\" aria-hidden=\"true\"></i>" + "&nbsp;" +
+                                    "</a>" +
+                                    "<a href=\"update?id="+rs.getString("id") + "\">" +
+                                    "<i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>" + "&nbsp;" +
+                                    "</a>"+
+                                    "<i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i>" + "&nbsp;" +
                                     "</td>" +
                             "</tr>";
                 }

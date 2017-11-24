@@ -8,11 +8,10 @@ public class Students {
     Connection conn;
     Statement st;
     ResultSet rs;
-
+    String url = "jdbc:mysql://localhost/webapp";
     public ResultSet GetData() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/webapp";
             conn = DriverManager.getConnection(url, "root", "");
             st = conn.createStatement();
             rs = st.executeQuery("SELECT *  FROM students");
@@ -58,5 +57,41 @@ public class Students {
 
         }
     return StudentArr;
+    }
+    public boolean updateStudent(
+            String id,
+            String student_no,
+            String first_name,
+            String last_name,
+            String middle_name,
+            String birthdate,
+            String email,
+            String contact_no,
+            String address,
+            String gender,
+            String course) {
+
+        boolean bln = false;
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(url,"root","");
+            st = conn.createStatement();
+            rs = st.executeQuery("Update students set " +
+            "first_name='"+first_name+"'"+
+                    "middle_name='"+middle_name+"'"+
+                    "last_name='"+last_name+"'"+
+                    "birthdate='"+birthdate+"'"+
+                    "email='"+email+"'"+
+                    "contact_no='"+contact_no+"'"+
+                    "address='"+address+"'"+
+                    "gender='"+gender+"'"+
+                    "course='"+course+"'" +
+                    "WHERE id = '"+id+"'");
+            bln = true;
+        }catch (Exception e ){
+
+        }
+        return bln;
     }
 }
