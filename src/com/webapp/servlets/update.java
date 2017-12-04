@@ -20,16 +20,16 @@ import java.sql.Statement;
 public class update extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-        String student_no = request.getParameter("id");
-        String first_name = request.getParameter("id");
-        String last_name = request.getParameter("id");
-        String middle_name = request.getParameter("id");
-        String birthdate = request.getParameter("id");
-        String email = request.getParameter("id");
-        String contact_no = request.getParameter("id");
-        String address = request.getParameter("id");
-        String gender = request.getParameter("id");
-        String course = request.getParameter("id");
+        String student_no = request.getParameter("  student_no");
+        String first_name = request.getParameter("first_name");
+        String last_name = request.getParameter("last_name");
+        String middle_name = request.getParameter("middle_name");
+        String birthdate = request.getParameter("birthdate");
+        String email = request.getParameter("email");
+        String contact_no = request.getParameter("contact_no");
+        String address = request.getParameter("address");
+        String gender = request.getParameter("gender");
+        String course = request.getParameter("course");
 
         Students students = new Students();
         Boolean bln = students.updateStudent(
@@ -45,6 +45,13 @@ public class update extends HttpServlet {
                 gender,
                 course);
 
+        students.Close();
+        PrintWriter out = response.getWriter();
+        if(bln) {
+            out.println("Update successful.");
+        } else {
+            out.println("Update was not successful.");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

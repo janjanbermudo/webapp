@@ -47,9 +47,13 @@
               </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
       </nav>
-
-       <table class="table table-stripe">
-         <thead>
+        <form action="/search" method="post">
+            <input name="search" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn"></span>
+                <input type="submit">
+        </form>
+      <table class="table table-stripe">
+          <thead>
             <th>Student no</th>
             <th>First name </th>
             <th>Middle name</th>
@@ -60,7 +64,7 @@
            <tbody>
            ${studentsData}
            </tbody>
-       </table>
+      </table>
   </div>
 
   <script src="plugins/js/jquery.min.js"></script>
