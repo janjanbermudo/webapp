@@ -50,8 +50,10 @@
         <form action="/search" method="post">
             <input name="search" type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn"></span>
-                <input type="submit">
+                <input type="submit" style="visibility: hidden;">
         </form>
+        <center><a href="add.jsp"><button class="btn btn-primary"> Add Student (+) </button></a></center>
+    <br>
       <table class="table table-stripe">
           <thead>
             <th>Student no</th>

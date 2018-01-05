@@ -1,0 +1,59 @@
+main {
+    font-family: 'Times New Roman', Georgia;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    height: 700px;
+    background: #f79d00;
+    background: -webkit-linear-gradient(to right, #64f38c, #f79d00);
+    background: linear-gradient(to right, #64f38c, #f79d00);
+}
+
+.login-box {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    padding: 46px;
+
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    text-align: center;
+}
+
+h2, h3, p {
+    font-family: Georgia;
+    font-weight: 400;
+    color: #111;
+}
+
+.fa {
+    color: #222;
+    margin: 6px;
+}
+
+input {
+    background-color: inherit;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 8px;
+    color: #111;
+}
+
+.btns {
+    display: block;
+    margin: 8px;
+}
+
+button {
+    width: 90px;
+    color: #111;
+    background-color: inherit;
+    border: 1px solid #111;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}

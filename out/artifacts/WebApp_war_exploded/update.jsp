@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html:charset=UTF-8">
     <link rel="stylesheet" href="plugins/css/normalize.css">
     <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
@@ -47,9 +48,10 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <
-    <form action="/update" method="post">
-    <div class="data"><img src ="assets/images/${images}"></div>
+
+    <form action="/update" method="post" enctype="multipart/form-data">
+        <center>
+        <div class="data"><img src ="assets/images/${image}" style="width: 100%;"></div>
         <input type="file" name="image">
         <input class="data" type="text" name="id" value="${id}" readonly>
         <input class="data" type="text" name="student_no" value="${student_no}" readonly>
@@ -64,7 +66,7 @@
         <input class="data" type="text" name="course" value="${course}" required>
         <center><a href="update.jsp"><button>Save</button></a></center>
         <center><a href="login.jsp"><button>Back</button></a></center>
-
+        </center>
     </form>
 </div>
 <script src="plugins/js/jquery.min.js"></script>

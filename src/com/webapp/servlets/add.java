@@ -13,17 +13,16 @@ import java.io.IOException;
 import javax.servlet.http.Part;
 import java.io.PrintWriter;
 
-/**
- * Created by Ian on 24/11/2017.
- */
-@WebServlet(name = "update")
+@WebServlet(
+        name = "add"
+)
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 10,
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 50
 
 )
-public class update extends HttpServlet {
+public class add extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String student_no = request.getParameter("student_no");
@@ -40,7 +39,6 @@ public class update extends HttpServlet {
         //parse uploaded file
         PrintWriter out = response.getWriter();
         Part uploadedImage = request.getPart("image");
-//        out.println(uploadedImage.getHeader("content-disposition"));
         String filename = extractFileName(uploadedImage);
 
         String savepath = "C:\\Users\\student\\IdeaProjects\\WebApp\\web\\assets\\images" + File.separator + filename;
@@ -64,12 +62,19 @@ public class update extends HttpServlet {
         students.Close();
 /*        out.println(bln);*/
         if (bln) {
-            out.println("Update was Successful");
-        } else
-            out.println("Update Error Occurred");
+            out.println("Add Successfull");
+        } else {
+            String errorMessage =
+                    "<div class=\"alert alert-danger alert-dismissable alert-login\" role=\"alert\">\n" +
+                            "   <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
+                            "<span aria-hidden=\"true\">&times;</span>" +
+                            "   </button>" +
+                            "  <strong>Error!</strong> Student number already exist.\n" +
+                            "</div>";
+            request.setAttribute("errorMessage", errorMessage);
+            request.getRequestDispatcher("/add");
+        }
     }
-
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int studentID = Integer.parseInt(request.getParameter("id"));
         Students students = new Students();
@@ -89,7 +94,7 @@ public class update extends HttpServlet {
         request.setAttribute("image", StudentsArr[11]);
 
 
-        request.getRequestDispatcher("/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/add.jsp").forward(request, response);
     }
 
     private String extractFileName(Part part) {

@@ -59,5 +59,45 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.webapp.servlets.delete</servlet-class>
+    </servlet>
 
-</web-app>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>com.webapp.servlets.add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>loginpage</servlet-name>
+    <servlet-class>com.webapp.servlets.loginpage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>loginpage</servlet-name>
+    <url-pattern>/loginpage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>cancel</servlet-name>
+    <servlet-class>com.webapp.servlets.cancel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>cancel</servlet-name>
+    <url-pattern>/cancel</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+        </web-app>
