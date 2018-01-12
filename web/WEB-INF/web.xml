@@ -78,12 +78,12 @@
     </servlet-mapping>
 
     <servlet>
-    <servlet-name>loginpage</servlet-name>
-    <servlet-class>com.webapp.servlets.loginpage</servlet-class>
+    <servlet-name>register</servlet-name>
+    <servlet-class>com.webapp.servlets.register</servlet-class>
     </servlet>
     <servlet-mapping>
-    <servlet-name>loginpage</servlet-name>
-    <url-pattern>/loginpage</url-pattern>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -94,8 +94,6 @@
     <servlet-name>cancel</servlet-name>
     <url-pattern>/cancel</url-pattern>
     </servlet-mapping>
-
-
 
 
 

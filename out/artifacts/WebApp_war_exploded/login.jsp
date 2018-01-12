@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/loginpage.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 
@@ -33,11 +35,12 @@
                 <br>
                 <button type="submit" class="btn btn-primary btn-login">Submit</button>
             </form>
+            <br>
         </div>
     </div>
 </div>
 
-<script src="plugins/js/jquery.min.js"></script>
+<script src="plugins/js/login.js"></script>
 <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

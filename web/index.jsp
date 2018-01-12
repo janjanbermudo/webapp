@@ -27,7 +27,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Brand</a>
+                  <a class="navbar-brand" href="#"></a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,16 +52,13 @@
             <span class="input-group-btn"></span>
                 <input type="submit" style="visibility: hidden;">
         </form>
-        <center><a href="add.jsp"><button class="btn btn-primary"> Add Student (+) </button></a></center>
+        <center><a href="add.jsp"><button class="btn btn-primary"> Add Recipe </button></a></center>
     <br>
       <table class="table table-stripe">
           <thead>
-            <th>Student no</th>
-            <th>First name </th>
-            <th>Middle name</th>
-            <th>Last name</th>
-            <th>Image</th>
-            <th>Action</th>
+            <th>id</th>
+            <th>Name </th>
+            <th>Recipe</th>
          </thead>
            <tbody>
            ${studentsData}

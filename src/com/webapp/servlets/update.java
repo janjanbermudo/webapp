@@ -13,9 +13,7 @@ import java.io.IOException;
 import javax.servlet.http.Part;
 import java.io.PrintWriter;
 
-/**
- * Created by Ian on 24/11/2017.
- */
+
 @WebServlet(name = "update")
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 10,
@@ -26,16 +24,8 @@ import java.io.PrintWriter;
 public class update extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-        String student_no = request.getParameter("student_no");
-        String first_name = request.getParameter("first_name");
-        String middle_name = request.getParameter("middle_name");
-        String last_name = request.getParameter("last_name");
-        String birthdate = request.getParameter("birthdate");
-        String email = request.getParameter("email");
-        String contact_no = request.getParameter("contact_no");
-        String address = request.getParameter("address");
-        String gender = request.getParameter("gender");
-        String course = request.getParameter("course");
+        String name = request.getParameter("name");
+        String recipe = request.getParameter("recipe");
 
         //parse uploaded file
         PrintWriter out = response.getWriter();
@@ -50,16 +40,8 @@ public class update extends HttpServlet {
         Students students = new Students();
         Boolean bln = students.updateStudent(
                 id,
-                student_no,
-                first_name,
-                middle_name,
-                last_name,
-                birthdate,
-                email,
-                contact_no,
-                address,
-                gender,
-                course,
+                name,
+                recipe,
                 filename);
         students.Close();
 /*        out.println(bln);*/
@@ -76,17 +58,10 @@ public class update extends HttpServlet {
         String[] StudentsArr = students.GetStudent(studentID);
 
         request.setAttribute("id", StudentsArr[0]);
-        request.setAttribute("student_no", StudentsArr[1]);
-        request.setAttribute("first_name", StudentsArr[2]);
-        request.setAttribute("middle_name", StudentsArr[3]);
-        request.setAttribute("last_name", StudentsArr[4]);
-        request.setAttribute("birthdate", StudentsArr[5]);
-        request.setAttribute("email", StudentsArr[6]);
-        request.setAttribute("contact_no", StudentsArr[7]);
-        request.setAttribute("address", StudentsArr[8]);
-        request.setAttribute("gender", StudentsArr[9]);
-        request.setAttribute("course", StudentsArr[10]);
-        request.setAttribute("image", StudentsArr[11]);
+        request.setAttribute("name", StudentsArr[1]);
+        request.setAttribute("recipe", StudentsArr[2]);
+        request.setAttribute("image", StudentsArr[3]);
+
 
 
         request.getRequestDispatcher("/update.jsp").forward(request, response);

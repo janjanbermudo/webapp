@@ -23,7 +23,7 @@
             <h3 class="panel-title">Login</h3>
         </div>
         <div class="panel-body">
-            <form method="post" action="/login">
+            <form method="post" action="/add">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -32,10 +32,14 @@
                     <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
                     <input type="password" class="form-control" name="password" placeholder="Password" required>
                 </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    <input type="email" class="form-control" name="email" placeholder="email" required>
+                </div>
                 <br>
-                <button type="submit" class="btn btn-primary btn-login">Submit</button>
+                <button type="submit" class="btn btn-primary btn-login">Register</button>
             </form>
-            <br>
+
         </div>
     </div>
 </div>

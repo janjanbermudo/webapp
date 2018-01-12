@@ -7,7 +7,6 @@ import java.sql.*;
 import java.util.Arrays;
 
 
-
 /**
  * Created by Ian on 30/10/2017.
  */
@@ -48,17 +47,10 @@ public class Students {
             rs = st.executeQuery("SELECT * FROM students WHERE id ='" + studentID + "'");
             while (rs.next()) {
                 StudentsArr[0] = rs.getString("id");
-                StudentsArr[1] = rs.getString("student_no");
-                StudentsArr[2] = rs.getString("first_name");
-                StudentsArr[3] = rs.getString("middle_name");
-                StudentsArr[4] = rs.getString("last_name");
-                StudentsArr[5] = rs.getString("birthdate");
-                StudentsArr[6] = rs.getString("email");
-                StudentsArr[7] = rs.getString("contact_no");
-                StudentsArr[8] = rs.getString("address");
-                StudentsArr[9] = rs.getString("gender");
-                StudentsArr[10] = rs.getString("course");
-                StudentsArr[11] = rs.getString("image");
+                StudentsArr[1] = rs.getString("name");
+                StudentsArr[2] = rs.getString("recipe");
+                StudentsArr[3] = rs.getString("image");
+
             }
         } catch (Exception e) {
         }
@@ -86,16 +78,8 @@ public class Students {
         return bln;
     }
     public Boolean addStudent(String id,
-                                 String student_no,
-                                 String first_name,
-                                 String middle_name,
-                                 String last_name,
-                                 String birthdate,
-                                 String email,
-                                 String contact_no,
-                                 String address,
-                                 String gender,
-                                 String course,
+                                 String name,
+                                 String recipe,
                                  String image) {
         boolean bln = false;
         String debug = "";
@@ -103,33 +87,19 @@ public class Students {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, "root", "");
             String sql = "INSERT INTO students " +
-                    " (student_no," +
-                    "first_name," +
-                    "middle_name,"+
-                    "last_name,"+
-                    "birthdate,"+
-                    "email," +
-                    "contact_no,"+
-                    "address," +
-                    "gender,"+
-                    "course,"+
+                    " (id," +
+                    "name," +
+                    "recipe,"+
                     "image) " +
                     "VALUES " +
-                    "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "(?, ?, ?, ?)";
 
 
             ps = conn.prepareStatement(sql);
-            ps.setString(1, student_no);
-            ps.setString(2, first_name);
-            ps.setString(3, middle_name);
-            ps.setString(4, last_name);
-            ps.setString(5, birthdate);
-            ps.setString(6, email);
-            ps.setString(7, contact_no);
-            ps.setString(8, address);
-            ps.setString(9, gender);
-            ps.setString(10, course);
-            ps.setString(11, image);
+            ps.setString(1, id);
+            ps.setString(2, name);
+            ps.setString(3, recipe);
+            ps.setString(4, image);
 
 
             int result = ps.executeUpdate();
@@ -144,16 +114,8 @@ public class Students {
 
 
     public Boolean updateStudent(String id,
-                                 String student_no,
-                                 String first_name,
-                                 String middle_name,
-                                 String last_name,
-                                 String birthdate,
-                                 String email,
-                                 String contact_no,
-                                 String address,
-                                 String gender,
-                                 String course,
+                                 String name,
+                                 String recipe,
                                  String image) {
         boolean bln = false;
         String debug = "";
@@ -161,29 +123,16 @@ public class Students {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, "root", "");
             String sql = "UPDATE students set " +
-                    "first_name=?, " +
-                    "middle_name=?, " +
-                    "last_name=?, " +
-                    "birthdate=?, " +
-                    "email=?, " +
-                    "contact_no=?, " +
-                    "address=?, " +
-                    "gender=?, " +
-                    "course=?, " +
-                    "image=? " +
+                    "id=?, " +
+                    "name=?, " +
+                    "recipe=?, " +
+                    "image=?, " +
                     "WHERE id=?";
             ps = conn.prepareStatement(sql);
-            ps.setString(1, first_name);
-            ps.setString(2, middle_name);
-            ps.setString(3, last_name);
-            ps.setString(4, birthdate);
-            ps.setString(5, email);
-            ps.setString(6, contact_no);
-            ps.setString(7, address);
-            ps.setString(8, gender);
-            ps.setString(9, course);
-            ps.setString(10, image);
-            ps.setString(11, id);
+            ps.setString(1, id);
+            ps.setString(2, name);
+            ps.setString(3, recipe);
+            ps.setString(4, image);
 
 
             int result = ps.executeUpdate();
@@ -203,9 +152,9 @@ public class Students {
             conn = DriverManager.getConnection(url, "root", "");
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM students WHERE"
-                    + " first_name LIKE '%"+search+"%' OR "
-                    + "last_name LIKE '%"+search+"%' OR "
-                    + "middle_name LIKE '%"+search+"%'");
+                    + " id LIKE '%"+search+"%' OR "
+                    + "name LIKE '%"+search+"%' OR "
+                    + "recipe LIKE '%"+search+"%'");
 
         } catch (Exception e) {
 

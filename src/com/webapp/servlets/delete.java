@@ -45,17 +45,10 @@ public class delete extends HttpServlet {
 
         String[] StudentArr = students.GetStudent(studentID);
         request.setAttribute("id", StudentArr[0]);
-        request.setAttribute("student_no", StudentArr[1]);
-        request.setAttribute("first_name", StudentArr[2]);
-        request.setAttribute("last_name", StudentArr[3]);
-        request.setAttribute("middle_name", StudentArr[4]);
-        request.setAttribute("birthdate", StudentArr[5]);
-        request.setAttribute("email", StudentArr[6]);
-        request.setAttribute("contact_no", StudentArr[7]);
-        request.setAttribute("address", StudentArr[8]);
-        request.setAttribute("gender", StudentArr[9]);
-        request.setAttribute("course", StudentArr[10]);
-        request.setAttribute("image", StudentArr[11]);
+        request.setAttribute("name", StudentArr[1]);
+        request.setAttribute("recipe", StudentArr[2]);
+        request.setAttribute("image", StudentArr[3]);
+
 
         request.getRequestDispatcher("/delete.jsp").forward(request, response);
 

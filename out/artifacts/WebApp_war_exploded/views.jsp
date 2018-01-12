@@ -47,20 +47,12 @@
               </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
       </nav>
-      <div class="data"><img src ="assets/images/${images}"></div>
+      <div class="data"><img src ="assets/images/${image}"></div>
       <div class="data">${id}</div>
-      <div class="data">${student_no}</div>
-      <div class="data">${first_name}</div>
-      <div class="data">${last_name}</div>
-      <div class="data">${middle_name}</div>
-      <div class="data">${birthdate}</div>
-      <div class="data">${email}</div>
-      <div class="data">${contact_no}</div>
-      <div class="data">${address}</div>
-      <div class="data">${gender}</div>
-      <div class="data">${course}</div>
+      <div class="data">${name}</div>
+      <div class="data">${recipe}</div>
       <br>
-      <center><a href="login.jsp"><button><-Back</button></a></center>
+      <center><a href="login"><button><-Back</button></a></center>
 
   </div>
   <script src="plugins/js/jquery.min.js"></script>

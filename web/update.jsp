@@ -54,16 +54,8 @@
         <div class="data"><img src ="assets/images/${image}" style="width: 100%;"></div>
         <input type="file" name="image">
         <input class="data" type="text" name="id" value="${id}" readonly>
-        <input class="data" type="text" name="student_no" value="${student_no}" readonly>
-        <input class="data" type="text" name="first_name" value="${first_name}" required>
-        <input class="data" type="text" name="last_name" value="${last_name}" required>
-        <input class="data" type="text" name="middle_name" value="${middle_name}" required>
-        <input class="data" type="text" name="birthdate" value="${birthdate}" required>
-        <input class="data" type="text" name="email" value="${email}" required>
-        <input class="data" type="text" name="contact_no" value="${contact_no}" required>
-        <input class="data" type="text" name="address" value="${address}" required>
-        <input class="data" type="text" name="gender" value="${gender}" required>
-        <input class="data" type="text" name="course" value="${course}" required>
+        <input class="data" type="text" name="name" value="${name}" >
+        <input class="data" type="text" name="recipe" value="${recipe}" >
         <center><a href="update.jsp"><button>Save</button></a></center>
         <center><a href="login.jsp"><button>Back</button></a></center>
         </center>

@@ -29,10 +29,8 @@ public class search extends HttpServlet {
             while (rs.next()) {
                 studentsData +=
                         "<tr>" +
-                                "<td>" + rs.getString("student_no") + "</td>" +
-                                "<td>" + rs.getString("first_name") + "</td>" +
-                                "<td>" + rs.getString("middle_name") + "</td>" +
-                                "<td>" + rs.getString("last_name") + "</td>" +
+                                "<td>" + rs.getString("id") + "</td>" +
+                                "<td>" + rs.getString("name") + "</td>" +
                                 "<td>" +
                                 "<img class=\"profile-img\"" +
                                 "src=\"assets/images/" + rs.getString("image")+"\">" +

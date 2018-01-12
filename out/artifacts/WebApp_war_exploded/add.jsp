@@ -54,19 +54,12 @@
     <form action="/add" method="post" enctype="multipart/form-data">
         <center>
         Upload profile image:<input type="file" name="image">
-        <input class="data" type="text" name="student_no" placeholder="student no" required>
-        <input class="data" type="text" name="first_name" placeholder="first name" required>
-        <input class="data" type="text" name="last_name" placeholder="last name" required>
-        <input class="data" type="text" name="middle_name" placeholder="middle name" required>
-        <input class="data" type="text" name="birthdate"  placeholder="birthdate (yyyy-mm-dd)" required>
-        <input class="data" type="email" name="email" placeholder="email" required>
-        <input class="data" type="text" name="contact_no" placeholder="contact number" required>
-        <input class="data" type="text" name="address" placeholder="address" required>
-        <input class="data" type="text" name="gender"  placeholder="gender" required>
-        <input class="data" type="text" name="course" placeholder="course" required>
-        <br>
-        <input type="submit" name="submit" value="Register">
-        </center>
+            <input class="data" type="text" name="id" placeholder="id">
+            <input class="data" type="text" name="name" placeholder="name" required>
+            <input class="data" type="text" name="recipe" placeholder="recipe" required>
+            <br>
+            <input type="submit" name="submit" value="Register">
+            </center>
     </form>
     <br>
     <center><a href="login"><button>Back</button></a></center>
